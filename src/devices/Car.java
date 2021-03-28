@@ -1,4 +1,6 @@
-package pl.gda.wsb;
+package devices;
+
+import pl.gda.wsb.Producer;
 
 public class Car {
     final public String model;

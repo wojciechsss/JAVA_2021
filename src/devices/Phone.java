@@ -1,4 +1,4 @@
-package pl.gda.wsb;
+package devices;
 
 public class Phone {
     public  String model;
@@ -9,5 +9,14 @@ public class Phone {
         this.model = model;
         this.marka = marka;
         this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "model='" + model + '\'' +
+                ", marka='" + marka + '\'' +
+                ", number=" + number +
+                '}';
     }
 }

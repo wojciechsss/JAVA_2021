@@ -1,5 +1,8 @@
 package pl.gda.wsb;
 
+import devices.Car;
+import devices.Phone;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,10 +61,10 @@ public class Main {
         humanArrayList.add(new Human("Robert","Badacki",56));
 
         for(Human str: humanArrayList){
-            System.out.println(str.name + " "+ str.surname + " "+ str.age + " " + str.pet);
+            System.out.println(str.name + " "+ str.surname + " "+ str.age);
 
             FileWriter fw = new FileWriter("human.txt",true);
-            fw.write(str.name + " "+ str.surname + " "+ str.age+ " " + str.pet+"\n");
+            fw.write(str.name + " "+ str.surname + " "+ str.age+"\n");
             fw.close();
         }
 
@@ -71,15 +74,16 @@ public class Main {
         System.out.println(phone1.number);
 
 
-        Car car1 = new Car("p125", Producer.FIAT, 125125125.25);
+        Car car1 = new Car("p125", Producer.FIAT, 1251.25);
 
         human1.car = car1;
         human1.pet = animal1;
+        human1.phone = phone1;
 
         if(human2.equals(human3)) System.out.println("Wynik porównania: TRUE");
         else System.out.println("Wynik porównania: FALSE");
 
-        System.out.println(animal1);
+        System.out.println(human1);
     }
 }
 
