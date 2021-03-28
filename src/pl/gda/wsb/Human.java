@@ -12,6 +12,25 @@ public class Human {
     public Animal pet;
     public Car car;
     public Phone phone;
+    private  Double salary;
+
+    public Double getSalary() {
+        System.out.println(java.time.LocalDate.now());
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        if(salary >= 0.0) {
+            this.salary = salary;
+            System.out.println("Nowe dane wysłane do systemu księgowego!");
+            System.out.println("Należy odebrać aneks od Pani Hani z HR");
+            System.out.println("ZUS i US już wiedzą o zmianie wypłaty");
+        }else {
+            System.out.println("Wartość ujemna!!!!");
+        }
+    }
+
+
 
     public Human(String name, String surname, int age) {
         this.name = name;
