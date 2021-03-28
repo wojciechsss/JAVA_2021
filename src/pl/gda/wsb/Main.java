@@ -14,6 +14,18 @@ public class Main {
         System.out.println(animal1);
         System.out.println(animal1.name);
 
+        System.out.println(animal1.weight);
+        animal1.takeForAWALK();
+        System.out.println(animal1.weight);
+        animal1.takeForAWALK();
+
+        System.out.println(animal2.weight);
+        animal2.feed();
+        System.out.println(animal2.weight);
+        animal2.feed();
+        System.out.println(animal2.weight);
+        animal2.takeForAWALK();
+
 
         if(animal1.weight>animal2.weight) System.out.println("Najcieższym zwierzęciem jest: " + animal1.name);
         else System.out.println("Najcieższym zwierzęciem jest: " + animal2.name);
@@ -29,8 +41,8 @@ public class Main {
         System.out.println(animalWithMaxWeightBuilder);
 
         ArrayList<Human> humanArrayList = new ArrayList<Human>();
-        Human human1 = new Human("Wojtek", "Siedlecki",24);
-        Human human2 = new Human("Darek", "Adacki",15);
+        Human human1 = new Human("Wojtek", "Siedlecki",24, animal1);
+        Human human2 = new Human("Darek", "Adacki",15, animal2);
         System.out.println(human1.age);
 
         if(human1.age> human2.age) System.out.println("Starszy jest: " + human1.name);
@@ -40,13 +52,13 @@ public class Main {
 
         humanArrayList.add(human1);
         humanArrayList.add(human2);
-        humanArrayList.add(new Human("Robert","Badacki",56));
+        humanArrayList.add(new Human("Robert","Badacki",56, animal2));
 
         for(Human str: humanArrayList){
-            System.out.println(str.name + " "+ str.surname + " "+ str.age);
+            System.out.println(str.name + " "+ str.surname + " "+ str.age + " " + str.pet);
 
             FileWriter fw = new FileWriter("human.txt",true);
-            fw.write(str.name + " "+ str.surname + " "+ str.age+"\n");
+            fw.write(str.name + " "+ str.surname + " "+ str.age+ " " + str.pet+"\n");
             fw.close();
         }
 
