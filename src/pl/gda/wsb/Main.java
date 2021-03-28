@@ -68,6 +68,7 @@ public class Main {
         System.out.println(phone1.number);
 
 
+        Car car1 = new Car("p125", "Fiat", 125125125.25, human1);
 
     }
 }
