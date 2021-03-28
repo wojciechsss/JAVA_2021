@@ -2,15 +2,22 @@ package pl.gda.wsb;
 
 public class Car {
     final public String model;
-    final public String producer;
+    final public Producer producer;
     public double mileage;
-    public  Human property;
 
 
-    public  Car(String model, String producer, double mileage, Human property){
+    public  Car(String model, Producer producer, double mileage){
         this.model = model;
         this.producer = producer;
         this.mileage = mileage;
-        this.property = property;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", producer=" + producer +
+                ", mileage=" + mileage +
+                '}';
     }
 }

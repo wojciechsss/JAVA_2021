@@ -41,8 +41,11 @@ public class Main {
         System.out.println(animalWithMaxWeightBuilder);
 
         ArrayList<Human> humanArrayList = new ArrayList<Human>();
-        Human human1 = new Human("Wojtek", "Siedlecki",24, animal1);
-        Human human2 = new Human("Darek", "Adacki",15, animal2);
+        Human human1 = new Human("Wojtek", "Siedlecki",24);
+        Human human2 = new Human("Darek", "Adacki",15);
+        Human human3 = new Human("Darek", "Adacki",15);
+
+
         System.out.println(human1.age);
 
         if(human1.age> human2.age) System.out.println("Starszy jest: " + human1.name);
@@ -52,7 +55,7 @@ public class Main {
 
         humanArrayList.add(human1);
         humanArrayList.add(human2);
-        humanArrayList.add(new Human("Robert","Badacki",56, animal2));
+        humanArrayList.add(new Human("Robert","Badacki",56));
 
         for(Human str: humanArrayList){
             System.out.println(str.name + " "+ str.surname + " "+ str.age + " " + str.pet);
@@ -68,8 +71,15 @@ public class Main {
         System.out.println(phone1.number);
 
 
-        Car car1 = new Car("p125", "Fiat", 125125125.25, human1);
+        Car car1 = new Car("p125", Producer.FIAT, 125125125.25);
 
+        human1.car = car1;
+        human1.pet = animal1;
+
+        if(human2.equals(human3)) System.out.println("Wynik porównania: TRUE");
+        else System.out.println("Wynik porównania: FALSE");
+
+        System.out.println(animal1);
     }
 }
 

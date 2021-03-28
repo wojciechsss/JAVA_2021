@@ -38,4 +38,13 @@ public class Animal {
             System.out.println("Zwierze nie żyje");
         }
     };
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }
