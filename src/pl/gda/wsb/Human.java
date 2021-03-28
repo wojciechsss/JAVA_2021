@@ -10,7 +10,7 @@ public class Human {
     public  String surname;
     public  int age;
     public Animal pet;
-    public Car car;
+    private Car car;
     public Phone phone;
     private  Double salary;
 
@@ -31,6 +31,25 @@ public class Human {
     }
 
 
+    public Car getCar() {
+        return car;
+    }
+
+
+//- jeśli zarobki człowieka są wyższe niż cena samochodu wypisujemy info, że udało się kupić za gotówkę i przypisujemy samochód
+//- jeżeli zarobi są większe niż 1/12 wartości samochodu wypisujemy info, że udało się kupić na kredyt (no trudno) i przypisujemy samochód
+//- w pozostałych wypadkach wypisujemy info, w stylu "zapisz się na studia i znajdź nową robotę albo idź po podwyżkę" i nie przypisujemy samochodu
+    public void setCar(Car car) {
+        if(this.salary > car.price) {
+            this.car = car;
+            System.out.println("Brawo!! Zdobyłeś auto za gotówke!!!");
+        }else if(this.salary > this.salary/12){
+            this.car = car;
+            System.out.println("Kredyt!! Trudno kredyt ale i tak zdobyłeś auto!!!");
+        }else{
+            System.out.println("Przykro mi ale musisz iść po podwyżkę lub zmienić pracę.");
+        }
+    }
 
     public Human(String name, String surname, int age) {
         this.name = name;

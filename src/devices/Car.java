@@ -5,13 +5,15 @@ import pl.gda.wsb.Producer;
 public class Car {
     final public String model;
     final public Producer producer;
-    public double mileage;
+    public Double mileage;
+    final public  Double price;
 
 
-    public  Car(String model, Producer producer, double mileage){
+    public  Car(String model, Producer producer, Double mileage, Double price){
         this.model = model;
         this.producer = producer;
         this.mileage = mileage;
+        this.price = price;
     }
 
     @Override
@@ -20,6 +22,7 @@ public class Car {
                 "model='" + model + '\'' +
                 ", producer=" + producer +
                 ", mileage=" + mileage +
+                ", mileage=" + price +
                 '}';
     }
 }
