@@ -69,14 +69,15 @@ public class Main {
         }
 
 
-        Phone phone1 = new Phone("A10", "Samsung", 123654789);
-        Phone phone2 = new Phone("Note 8T", "Redmi", 987654321);
+        Phone phone1 = new Phone("A10", "Samsung", 123654789, Producer.NOKIA, 55);
+        Phone phone2 = new Phone("Note 8T", "Redmi", 987654321, Producer.SAMSUNG,55);
         System.out.println(phone1.number);
 
 
-        Car car1 = new Car("p125", Producer.FIAT, 1251.25);
+        Car car1 = new Car("p125", Producer.FIAT, 1251.25, 1250.0, 2018);
 
-        human1.car = car1;
+        human1.setSalary(10000.0);
+        human1.setCar(car1);
         human1.pet = animal1;
         human1.phone = phone1;
 
@@ -84,6 +85,10 @@ public class Main {
         else System.out.println("Wynik porównania: FALSE");
 
         System.out.println(human1);
+
+
+        phone1.turnOn();
+        car1.turnOn();
     }
 }
 

@@ -2,16 +2,13 @@ package devices;
 
 import pl.gda.wsb.Producer;
 
-public class Car {
-    final public String model;
-    final public Producer producer;
+public class Car  extends Device{
     public Double mileage;
     final public  Double price;
 
 
-    public  Car(String model, Producer producer, Double mileage, Double price){
-        this.model = model;
-        this.producer = producer;
+    public  Car(String model, Producer producer, Double mileage, Double price, Integer yearOfProduction){
+        super(producer, model, yearOfProduction);
         this.mileage = mileage;
         this.price = price;
     }
@@ -21,8 +18,14 @@ public class Car {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", producer=" + producer +
+                ", yearOfProduction=" + yearOfProduction +
                 ", mileage=" + mileage +
                 ", mileage=" + price +
                 '}';
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("brrrr....");
     }
 }
