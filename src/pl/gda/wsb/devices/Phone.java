@@ -1,5 +1,6 @@
-package devices;
+package pl.gda.wsb.devices;
 
+import pl.gda.wsb.Human;
 import pl.gda.wsb.Producer;
 
 public class Phone extends Device{
@@ -28,5 +29,23 @@ public class Phone extends Device{
     @Override
     public void turnOn() {
         System.out.println(toString()+"uruchamia się");
+    }
+
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception{
+        if(buyer.getCash() >= price){
+            if(seller.getPhone() == this ){
+                buyer.setPhone(this);
+                seller.setPhone(null);
+                buyer.setCash(buyer.getCash() - price);
+                seller.setCash(seller.getCash() + price);
+                System.out.println("Sprzedano tel");
+            }else {
+                throw new Exception("Klient nie ma tego tel.");
+            }
+        }else {
+            throw new Exception("Klient nie ma kasy!");
+        }
     }
 }

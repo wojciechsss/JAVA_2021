@@ -1,7 +1,7 @@
 package pl.gda.wsb;
 
-import devices.Car;
-import devices.Phone;
+import pl.gda.wsb.devices.Car;
+import pl.gda.wsb.devices.Phone;
 
 import java.util.Objects;
 
@@ -11,8 +11,17 @@ public class Human {
     public  int age;
     public Animal pet;
     private Car car;
-    public Phone phone;
+    private Phone phone;
     private  Double salary;
+    private  Double cash = 15000.0;
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
 
     public Double getSalary() {
         System.out.println(java.time.LocalDate.now());
@@ -35,6 +44,13 @@ public class Human {
         return car;
     }
 
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
 
 //- jeśli zarobki człowieka są wyższe niż cena samochodu wypisujemy info, że udało się kupić za gotówkę i przypisujemy samochód
 //- jeżeli zarobi są większe niż 1/12 wartości samochodu wypisujemy info, że udało się kupić na kredyt (no trudno) i przypisujemy samochód
@@ -62,7 +78,7 @@ public class Human {
         if (this == o) return true;
         if (!(o instanceof Human)) return false;
         Human human = (Human) o;
-        return age == human.age && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(pet, human.pet) && Objects.equals(car, human.car) && Objects.equals(phone, human.phone);
+        return age == human.age && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(pet, human.pet) && Objects.equals(car, human.car) && Objects.equals(phone, human.phone) && Objects.equals(cash, human.cash);
     }
 
     @Override
@@ -79,6 +95,19 @@ public class Human {
                 ", pet=" + pet +
                 ", car=" + car +
                 ", phone=" + phone +
+                ", cash=" + cash +
                 '}';
+    }
+
+
+    public boolean hasCar(Car newCar){
+        if(this.car == newCar){
+            return true;
+        }
+        return false;
+    }
+
+    public void removeCar(){
+        this.car = null;
     }
 }

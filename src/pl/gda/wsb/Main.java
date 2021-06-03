@@ -1,7 +1,7 @@
 package pl.gda.wsb;
 
-import devices.Car;
-import devices.Phone;
+import pl.gda.wsb.devices.Car;
+import pl.gda.wsb.devices.Phone;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         System.out.println("Hello World!!");
 
         Animal animal1 = new Animal("mouse", "Jerry", 0.8);
@@ -81,6 +81,8 @@ public class Main {
         human1.pet = animal1;
         human1.phone = phone1;
 
+        human3.setSalary(10000.0);
+
         if(human2.equals(human3)) System.out.println("Wynik porównania: TRUE");
         else System.out.println("Wynik porównania: FALSE");
 
@@ -89,6 +91,12 @@ public class Main {
 
         phone1.turnOn();
         car1.turnOn();
+
+        try{
+            car1.sell(human1,human3,9800.0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 
