@@ -78,8 +78,8 @@ public class Main {
 
         human1.setSalary(10000.0);
         human1.setCar(car1);
-        human1.pet = animal1;
-        human1.phone = phone1;
+        human1.setPet(animal1);
+        human1.setPhone(phone1);
 
         human3.setSalary(10000.0);
 
@@ -94,6 +94,18 @@ public class Main {
 
         try{
             car1.sell(human1,human3,9800.0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            phone1.sell(human1,human3,890.0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            animal1.sell(human1,human3,890.0);
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -9,11 +9,19 @@ public class Human {
     public String name;
     public  String surname;
     public  int age;
-    public Animal pet;
+    private Animal pet;
     private Car car;
     private Phone phone;
     private  Double salary;
     private  Double cash = 15000.0;
+
+    public Animal getPet() {
+        return pet;
+    }
+
+    public void setPet(Animal pet) {
+        this.pet = pet;
+    }
 
     public Phone getPhone() {
         return phone;
