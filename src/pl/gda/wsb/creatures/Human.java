@@ -1,11 +1,11 @@
-package pl.gda.wsb;
+package pl.gda.wsb.creatures;
 
 import pl.gda.wsb.devices.Car;
 import pl.gda.wsb.devices.Phone;
 
 import java.util.Objects;
 
-public class Human {
+public class Human extends Animal{
     public String name;
     public  String surname;
     public  int age;
@@ -14,6 +14,7 @@ public class Human {
     private Phone phone;
     private  Double salary;
     private  Double cash = 15000.0;
+    public final String HUMAN_SPECIES = "homo sapiens";
 
     public Animal getPet() {
         return pet;
@@ -76,6 +77,7 @@ public class Human {
     }
 
     public Human(String name, String surname, int age) {
+        super("homo sapiens");
         this.name = name;
         this.surname = surname;
         this.age = age;

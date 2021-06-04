@@ -1,10 +1,11 @@
 package pl.gda.wsb;
 
+import pl.gda.wsb.creatures.Animal;
+import pl.gda.wsb.creatures.Human;
 import pl.gda.wsb.devices.Car;
 import pl.gda.wsb.devices.Phone;
 
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -15,32 +16,32 @@ public class Main {
         Animal animal1 = new Animal("mouse", "Jerry", 0.8);
         Animal animal2 = new Animal("cat", "Tom", 4.5);
         System.out.println(animal1);
-        System.out.println(animal1.name);
+        System.out.println(animal1.getName());
 
-        System.out.println(animal1.weight);
+        System.out.println(animal1.getWeight());
         animal1.takeForAWALK();
-        System.out.println(animal1.weight);
+        System.out.println(animal1.getWeight());
         animal1.takeForAWALK();
 
-        System.out.println(animal2.weight);
+        System.out.println(animal2.getWeight());
         animal2.feed();
-        System.out.println(animal2.weight);
+        System.out.println(animal2.getWeight());
         animal2.feed();
-        System.out.println(animal2.weight);
+        System.out.println(animal2.getWeight());
         animal2.takeForAWALK();
 
 
-        if(animal1.weight>animal2.weight) System.out.println("Najcieższym zwierzęciem jest: " + animal1.name);
-        else System.out.println("Najcieższym zwierzęciem jest: " + animal2.name);
+        if(animal1.getWeight()>animal2.getWeight()) System.out.println("Najcieższym zwierzęciem jest: " + animal1.getName());
+        else System.out.println("Najcieższym zwierzęciem jest: " + animal2.getName());
 
 
-        Animal animalWithMaxWeight = animal1.weight > animal2.weight ? animal1 : animal2;
+        Animal animalWithMaxWeight = animal1.getWeight() > animal2.getWeight() ? animal1 : animal2;
         StringBuilder animalWithMaxWeightBuilder = new StringBuilder()
         .append("Najcieższym zwierzęciem jest: ")
-        .append(animalWithMaxWeight.species+ " ")
-        .append(animalWithMaxWeight.name +" ")
-        .append(animalWithMaxWeight.weight);
-        System.out.println("Najcieższym zwierzęciem jest: " + animalWithMaxWeight.species +" "+ animalWithMaxWeight.name +" "+ animalWithMaxWeight.weight);
+        .append(animalWithMaxWeight.getSpecies()+ " ")
+        .append(animalWithMaxWeight.getName() +" ")
+        .append(animalWithMaxWeight.getWeight());
+        System.out.println("Najcieższym zwierzęciem jest: " + animalWithMaxWeight.getSpecies() +" "+ animalWithMaxWeight.getName() +" "+ animalWithMaxWeight.getWeight());
         System.out.println(animalWithMaxWeightBuilder);
 
         ArrayList<Human> humanArrayList = new ArrayList<Human>();
@@ -106,6 +107,12 @@ public class Main {
 
         try{
             animal1.sell(human1,human3,890.0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            human2.sell(human1,human3,890.0);
         }catch (Exception e){
             e.printStackTrace();
         }
